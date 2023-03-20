@@ -2,15 +2,17 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spd_app/square.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  final List _list = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,49 +52,48 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      body: Column(children: [
-        // ignore: duplicate_ignore
-        Container(
-          width: 600,
-          height: 200,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(30),
-                bottomRight: Radius.circular(30)),
-            color: Color(0xff115DA9),
-          ),
-          // ignore: sort_child_properties_last
-          child: Text(
-            " Krish Bhurtel",
-            style: const TextStyle(color: Colors.white, fontSize: 20),
-            textAlign: TextAlign.start,
-          ),
-        ),
-        SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              "Shortcut",
-              style: TextStyle(color: Colors.grey),
+      body: SingleChildScrollView(
+        child: Column(children: [
+          // ignore: duplicate_ignore
+          Container(
+            width: 600,
+            height: 200,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(30),
+                  bottomRight: Radius.circular(30)),
+              color: Color(0xff115DA9),
             ),
-            Text("Bills", style: TextStyle(color: Colors.grey)),
-            Text(
-              "Commerce",
-              style: TextStyle(color: Colors.grey),
-            )
-          ],
-        ),
-        SizedBox(height: 20),
-        ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            SizedBox(height: 30),
-            MyCard(),
-            MyCard(),
-          ],
-        )
-      ]),
+            // ignore: sort_child_properties_last
+            child: Text(
+              "    Krish Bhurtel",
+              style: const TextStyle(color: Colors.white, fontSize: 20),
+              textAlign: TextAlign.start,
+            ),
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(
+                "Shortcut",
+                style: TextStyle(color: Colors.grey),
+              ),
+              Text("Bills", style: TextStyle(color: Colors.grey)),
+              Text(
+                "Commerce",
+                style: TextStyle(color: Colors.grey),
+              )
+            ],
+          ),
+          SizedBox(height: 20),
+          ListView(
+            scrollDirection: Axis.horizontal,
+            children: [],
+          )
+        ]),
+      ),
+      backgroundColor: const Color(0xffD5D5D5),
     );
   }
 }
